@@ -44,11 +44,11 @@ NFeatures = 8;
 MinFeatureHeight = 0.99;
  for iNFC = 1 : NFC
 	if NFC > 1 % For multiple files.
-        FileChoice = strcat(DataPath, FileGroup{iNFC});
-        FigTitle = FileGroup{iNFC}(1:end-4);
-    else % For a single file.
-        FileChoice = strcat(DataPath, FileGroup);
-        FigTitle = FileGroup{iNFC}(1:end-4);
+		FileChoice = strcat(DataPath, FileGroup{iNFC});
+		FigTitle = FileGroup{iNFC}(1:end-4);
+	    else % For a single file.
+		FileChoice = strcat(DataPath, FileGroup);
+		FigTitle = FileGroup(1:end-4);
 	end
 	RollImage = imread(FileChoice);
 	RollData = im2double(RollImage(:, :, 1));
