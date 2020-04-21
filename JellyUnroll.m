@@ -15,7 +15,7 @@ set ( 0 , 'DefaultFigureWindowStyle' , 'Docked' ) ;
 % vertically and horizontally and defines this as the centre (this may be a
 % simplification, something to develop later, or at a GUI for the user to
 % itneract with the definition. The function then crops the image to one
-% one pixel fewer than the determined width, and adds in order to have
+% pixel fewer than the determined width, and adds one in order to have
 % a central pixel to use as reference point. It then iterates circularly around
 % the matrix holding the image data, finding the closest pixel to the
 % required radial position, and plots the pixel value as a function of the
