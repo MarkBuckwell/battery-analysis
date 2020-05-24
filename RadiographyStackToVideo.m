@@ -19,7 +19,6 @@ ImageSkip = 1; % To skip mages between frames. Set to 1 to skip no images.
 TimeIncrement = 0.0005 ; % Time between frames in seconds.
 TimeBoxColour = 'White'; % Box colour for time stamp.
 VideoRotation = 0; % Image to video rotation angle.
-Precision = 1; % Image to double conversion precision.
 
 % Define video title and start video writer.
 FolderFormat = strfind(DataPath, '\'); % Determine folder delimiter.
