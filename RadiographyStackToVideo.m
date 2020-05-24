@@ -1,6 +1,5 @@
 clear
 clc
-close all
 addpath(cd);
 
 %% Imports and converts a stack of images into a video.
