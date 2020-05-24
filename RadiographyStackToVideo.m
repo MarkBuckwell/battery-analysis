@@ -21,16 +21,24 @@ TimeBoxColour = 'White'; % Box colour for time stamp.
 VideoRotation = 0; % Image to video rotation angle.
 Precision = 1; % Image to double conversion precision.
 
-% Start video writer.
-RadiographyVideo = VideoWriter('RadiographyVideo.avi', 'Grayscale AVI');
-% RadiographyVideo.LosslessCompression = 'True'; % No compression.
+% Define video title and start video writer.
+FolderFormat = strfind(DataPath, '\'); % Determine folder delimiter.
+if size(FolderFormat) == 0
+    Delimiter = '/';
+else
+    Delimiter = '\';
+end
+% Use delimiter to find folder name.
+VideoTitle = textscan(DataPath, '%s', 'Delimiter', Delimiter);
+VideoTitle = strcat(VideoTitle{1}{end}, '.avi');
+RadiographyVideo = VideoWriter(VideoTitle, 'Grayscale AVI');
 open(RadiographyVideo); % Open the video.
 
 %% Read in the image stack.
-warning('Off'); % Turn off imread warning on image type.
+warning('Off'); % Turn off imread warning about image type.
 for i = FirstImage : ImageSkip : LastImage % Iterate from first to last chosen images.
     % Read, rotate and invert image.
-    ReadImage = imcomplement(imrotate(imread(FileGroup{i}, VideoRotation));
+    ReadImage = imcomplement(imrotate(imread(FileGroup{i}), VideoRotation));
     
     % Insert a text box with the frame time.
     FrameTime = (TimeIncrement * (i - 1));
