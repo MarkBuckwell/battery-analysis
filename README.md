@@ -8,3 +8,7 @@ XRD.
 Cylindrical casing thickness.
 THT ARC thermal runaway.
 Some jellyroll orthoslice stuff.
+
+Some scripts use MyPlotOptions to define plotting preferences. This isn't essential for functionality and can be revised/removed.
+
+ZFit.m is required for EIS analysis, download from Mathworks.
